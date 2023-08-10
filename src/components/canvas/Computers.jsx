@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from "../Loader";
 
-const Computers = () => {
+const Computers = ({isMobile}) => {
 
   // Load the 3D model from a glTF file
   const computer = useGLTF('./desktop_pc/scene.gltf');
@@ -28,8 +28,8 @@ const Computers = () => {
       {/* Render the 3D object loaded from glTF */}
       <primitive
         object={computer.scene}
-        scale={0.70}
-        position={[0, -3.25, -1.5]}
+        scale={ isMobile ? 0.60 : 0.70}
+        position={ isMobile ? [0, -3, -2.2] :[0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
 
@@ -38,6 +38,29 @@ const Computers = () => {
 };
 
 const ComputersCanvas = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+
+    // it is used to check the device size
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    
+    // mediaQuery.matches returns a boolean
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) =>{
+      setIsMobile(event.matches);
+    }
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () =>{
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    }
+  },[])
+
+
   return (
     <Canvas
       frameLoop='demand'
@@ -55,7 +78,7 @@ const ComputersCanvas = () => {
         />
 
         {/* Render the Computers component */}
-        <Computers />
+        <Computers isMobile = {isMobile} />
       </Suspense>
 
       {/* Preload all assets */}
