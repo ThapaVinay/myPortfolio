@@ -66,6 +66,7 @@ const ComputersCanvas = () => {
       frameloop='demand'
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
+      // drawing buffer should be preserved after rendering the scene in WebGL.
       gl={{ preserveDrawingBuffer: true }}
     >
       {/* Display a loading spinner while 3D assets are loading */}
