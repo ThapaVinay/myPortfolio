@@ -16,10 +16,39 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value })   // ...form -> spreads the form
   }
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs.send('service_pxdt8p6', 'template_o19fwol',
+      {
+        from_name: form.name,
+        to_name: 'Vinay',
+        from_email: form.email,
+        to_email: 'thechampthapa@gmail.com',
+        message: form.message
+      },
+      'hYV0RmXCoVq83w-U_'
+    )
+      .then(() => {
+        setLoading(false);
+        alert("Thank You");
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        })
+      }, (error) => {
+        setLoading(false);
+
+        console.log(error);
+        alert("something went wrong");
+      }
+      )
 
   }
 
@@ -67,7 +96,7 @@ const Contact = () => {
           <button type="submit"
             className='bg-tertiary my-3 outline-none w-fit px-8 py-3 text-white font-bold shadow-md shadow-primary rounded-xl'
           >
-            {loading ? 'Sending' : 'Send'}
+            {loading ? 'Sending ...' : 'Send'}
           </button>
         </form>
       </motion.div>
