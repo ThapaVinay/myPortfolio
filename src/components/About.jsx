@@ -33,14 +33,13 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className='text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]'> Introduction</p>
-        <p className='text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'> Overview</p>
+        <p className='text-white font-bold md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>Introduction</p>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
-        I am a skilled software developer with experience in javascript and expertise in frameworks like react, node.js and three.js. I am a quick learner and collaborate closely with clients to create efficient, scalable and user - friendly solutions that solve real-world problems.
+        I'm a 3rd year B.Tech CSE AIML student at UPES, Dehradun, specializing in competitive coding and full stack development. Proficient in JavaScript and frameworks like React, Node.js, and three.js. With a strategic mindset from competitive coding, I create seamless applications that harmonize innovation and functionality. I'm dedicated to leaving a significant impact by transforming ideas into user-centric, cutting-edge experiences.
 
       </motion.p>
 

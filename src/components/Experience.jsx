@@ -45,8 +45,7 @@ const Experience = () => {
       <motion.div
         variants={textVariant()}
       >
-        <p className='text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]'> What I have done so far</p>
-        <p className='text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'> Work Experience</p>
+        <p className='text-white font-bold md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'> Work Experience</p>
       </motion.div>
 
       <div className="mt-20 flex flex-col">

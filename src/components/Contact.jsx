@@ -53,13 +53,12 @@ const Contact = () => {
   }
 
   return (
-    <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
+    <div className='xl:mt-12 flex justify-center overflow-hidden'>
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        className='w-full sm:w-[60%] bg-black-100 p-8 rounded-2xl'
       >
-        <p className='sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider'>Get in touch</p>
-        <p className='text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>Contact.</p>
+        <p className='text-white font-bold md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>Contact.</p>
 
 
         <form ref={formRef}
@@ -94,19 +93,19 @@ const Contact = () => {
           </label>
 
           <button type="submit"
-            className='bg-tertiary my-3 outline-none w-fit px-8 py-3 text-white font-bold shadow-md shadow-primary rounded-xl'
+            className='bg-tertiary my-3 outline-none w-fit px-6 py-2 text-white font-bold shadow-md shadow-primary rounded-xl'
           >
             {loading ? 'Sending ...' : 'Send'}
           </button>
         </form>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
       >
         <EarthCanvas />
-      </motion.div>
+      </motion.div> */}
 
     </div>
   )
