@@ -7,15 +7,21 @@ import CanvasLoader from "../Loader"
 
 const Earth = () => {
 
-  const earth = useGLTF('./planet/scene.gltf');
+  const earth = useGLTF('./spell_book/scene.gltf');
 
   return (
-    <primitive
-      object={earth.scene}
-      scale={2.5}
-      position-y={0}
-      rotation-y={0}
-    />
+    <mesh>
+
+
+      <hemisphereLight intensity={1.5} groundColor="black" />
+
+      <primitive
+        object={earth.scene}
+        scale={5}
+      // position-y={0}
+      // rotation-y={0}
+      />
+    </mesh>
   )
 }
 
@@ -26,18 +32,18 @@ const EarthCanvas = () => {
       frameloop="demand"
       gl={{ preserveDrawingBuffer: true }}
       camera={{
-        fov:45,
-        near:0.1,
-        far:200,
-        position:[-4,3,6]
+        fov: 45,
+        near: 0.1,
+        far: 200,
+        position: [-4, 3, 6]
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           autoRotate
           enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+        // maxPolarAngle={Math.PI / 2}
+        // minPolarAngle={Math.PI / 2}
         />
         <Earth />
       </Suspense>

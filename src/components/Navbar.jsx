@@ -5,22 +5,18 @@ import { logo, menu, close } from "../assets"
 import {
   HiHome,
   HiUser,
-  HiViewColumns,
-  HiRectangleGroup,
-  HiChatBubbleBottomCenterText,
+  HiAcademicCap,
+  HiFolder,
   HiEnvelope,
 } from 'react-icons/hi2';
+
+import Socials from './Socials';
 
 export const navData = [
   { name: 'home', path: '/', icon: <HiHome /> },
   { name: 'about', path: '/about', icon: <HiUser /> },
-  { name: 'projects', path: '/services', icon: <HiRectangleGroup /> },
-  { name: 'experience', path: '/work', icon: <HiViewColumns /> },
-  {
-    name: 'testimonials',
-    path: '/testimonials',
-    icon: <HiChatBubbleBottomCenterText />,
-  },
+  { name: 'experience', path: '/work', icon: <HiAcademicCap /> },
+  { name: 'projects', path: '/services', icon: <HiFolder /> },
   {
     name: 'contact',
     path: '/contact',
@@ -39,7 +35,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="sm:px-15 px-6 w-full flex items-center py-5 fixed top-0 z-20">
-        <div className='w-full flex justify-between items-center max-w-7xl mx-auto' >
+        <div className='w-full flex-col lg:flex-row flex justify-between items-center max-w-7xl mx-auto' >
           <Link to="/" className='flex items-center gap-2'
             onClick={() => {
               setActive("");
@@ -82,27 +78,39 @@ const Navbar = () => {
               const isActive = activeItem === index;
               return <a href={`#${link.name}`} key={index}
                 onClick={() => handleItemClick(index)}
-                className={`hover:text-[#F13024] transition-all duration-300 ${isActive ? '#F13024' : ''}`}
-              >{link.icon}</a>
+                className={`group hover:text-[#F13024] transition-all duration-300 ${isActive ? '#F13024' : ''}`}
+              >
+                {/* tooltip */}
+
+                <div className="absolute pr-16 right-0 hidden xl:group-hover:flex">
+                  <div className="bg-white relative flex text-primary items-center p-[6px] rounded-[3px]">
+                    <div className="text-[14px] leading-none font-semibold capitalise">{link.name}</div>
+
+                    {/* triangle */}
+                    <div className="border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2"></div>
+                  </div>
+                </div>
+
+                {link.icon}</a>
             })}
           </div>
 
-          <div className='xl:hidden fixed bottom-0 left-0 w-full flex justify-between items-center gap-x-6 text-xl bg-white/10 backdrop-blur-sm p-4'>
+          <div className='xl:hidden fixed bottom-0 left-0 w-full flex justify-between items-center gap-x-6 text-xl bg-white/10 backdrop-blur-md p-4'>
             {navData.map((link, index) => {
               const isActive = activeItem === index;
               return <a href={`#${link.name}`} key={index}
                 onClick={() => handleItemClick(index)}
-                className={`hover:text-[#F13024] transition-all duration-300 ${isActive ? '#F13024' : ''}`}
-              >{link.icon}</a>
+                className={`group hover:text-[#F13024] transition-all duration-300 ${isActive ? '#F13024' : ''}`}
+              >
+
+                {link.icon}</a>
             })}
           </div>
 
+          <Socials />
 
         </div>
       </nav>
-
-
-
 
     </>
 

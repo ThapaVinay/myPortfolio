@@ -28,7 +28,7 @@ const Computers = ({isMobile}) => {
       {/* Render the 3D object loaded from glTF */}
       <primitive
         object={computer.scene}
-        scale={ isMobile ? 0.60 : 0.65}
+        scale={ isMobile ? 0.60 : 0.70}
         position={ isMobile ? [0, -3, -2.2] :[0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
@@ -66,7 +66,6 @@ const ComputersCanvas = () => {
       frameloop='demand'
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
-      // drawing buffer should be preserved after rendering the scene in WebGL.
       gl={{ preserveDrawingBuffer: true }}
     >
       {/* Display a loading spinner while 3D assets are loading */}

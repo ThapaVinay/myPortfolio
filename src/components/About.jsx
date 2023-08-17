@@ -3,7 +3,9 @@ import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import { services } from '../constants';
 import { fadeIn, textVariant } from "../utils/motion";
-import {SectionWrapper} from '../hoc';
+import { SectionWrapper } from '../hoc';
+import circles from "/circles.png";
+import TopLeftImage from "./TopLeftImage.jsx";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -19,10 +21,10 @@ const ServiceCard = ({ index, title, icon }) => {
             speed: 450
           }}
           className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-          >
-           <img src={icon} alt={title} 
-           className='w-16 h-16 object-contain'/>
-           <h3 className='text-white text-[20px] font-bold text-center'>{title}</h3> 
+        >
+          <img src={icon} alt={title}
+            className='w-16 h-16 object-contain' />
+          <h3 className='text-white text-[20px] font-bold text-center'>{title}</h3>
         </div>
       </motion.div>
     </Tilt>
@@ -32,6 +34,11 @@ const ServiceCard = ({ index, title, icon }) => {
 const About = () => {
   return (
     <>
+
+      <div className='w-[200px] xl:w-[300px] absolute right-0 -bottom-2 mix-blend-color-dodge animate-pulse duration-75 z-10'>
+        <img src={circles} alt="circles" width={260} height={200} className='w-full h-full' />
+      </div>
+
       <motion.div variants={textVariant()}>
         <p className='text-white font-bold md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'>Introduction</p>
       </motion.div>

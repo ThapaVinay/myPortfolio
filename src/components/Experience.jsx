@@ -5,9 +5,12 @@ import 'react-vertical-timeline-component/style.min.css'
 import { experiences } from '../constants';
 import { SectionWrapper } from '../hoc';
 import { textVariant } from '../utils/motion';
+import bulb from "/bulb.png";
+
 
 const ExperienceCard = ({ experience }) => {
   return (
+
     <VerticalTimelineElement
       contentStyle={{ background: '#1d1836', color: "#fff" }}
       contentArrowStyle={{ borderRight: '7px solid #232631' }}
@@ -42,6 +45,11 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
+
+      <div className='w-[200px] xl:w-[260px] absolute -left-52 -bottom-12 mix-blend-color-dodge rotate-12  duration-75 z-10'>
+        <img src={bulb} alt="bulb" width={260} height={200} className='w-full h-full' />
+      </div>
+
       <motion.div
         variants={textVariant()}
       >
