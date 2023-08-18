@@ -6,6 +6,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from '../hoc';
 import circles from "/circles.png";
 import TopLeftImage from "./TopLeftImage.jsx";
+import ServiceSlider from "./ServiceSlider.jsx";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -50,13 +51,19 @@ const About = () => {
 
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className='mt-20 flex justify-center'>
+        <div className="w-full xl:max-w-[75%] flex justify-center ">
 
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
+          {/* {services.map((service, index) => (
+            <ServiceCard key={service.title} index={index} {...service} />
+          ))} */}
 
+          <ServiceSlider />
+
+        </div>
       </div>
+
+
 
     </>
   )

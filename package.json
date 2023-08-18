@@ -23,6 +23,7 @@
     "react-tilt": "^1.0.2",
     "react-tooltip": "^5.21.1",
     "react-vertical-timeline-component": "^3.6.0",
+    "swiper": "^10.2.0",
     "three": "^0.155.0"
   },
   "devDependencies": {
