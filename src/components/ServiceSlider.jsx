@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-import { services } from '../constants';
 
 import {
     RxCrop,
@@ -13,6 +12,25 @@ import {
     RxRocket,
     RxArrowTopRight
 } from 'react-icons/rx';
+
+const services = [
+    {
+      title: "Web Developer",
+      icon: <RxCrop />,
+    },
+    {
+      title: "React Native Developer",
+      icon: <RxDesktop />,
+    },
+    {
+      title: "Backend Developer",
+      icon: <RxPencil2 />,
+    },
+    {
+      title: "AIML Enthusiast",
+      icon: <RxRocket />,
+    },
+  ];
 
 import { FreeMode, Pagination } from 'swiper/modules';
 const ServiceSlider = () => {
@@ -46,10 +64,10 @@ const ServiceSlider = () => {
                     return (
                         <SwiperSlide key={index} className='w-full'>
                             <div className='bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex xl:flex-col  justify-between items-center gap-x-6 gap-y-6  group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300'>
-                                <div className='flex justify-center'>
-                                    <img className='w-16 h-16 object-contain text-accent' src={item.icon} alt={item.title} />
+                                <div className=' text-5xl text-accent flex justify-start xl:mb-2'>
+                                    {item.icon}
                                 </div>
-                                <div className='flex justify-center'>
+                                <div className=' flex justify-center'>
                                     <div >{item.title}</div>
                                 </div>
                                 <div className="flex text-3xl">
