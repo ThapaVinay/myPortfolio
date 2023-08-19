@@ -2,7 +2,7 @@ import React from 'react'
 import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import { github } from "../assets";
-import {live} from "../assets";
+import { live } from "../assets";
 
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
@@ -77,7 +77,7 @@ const ProjectCard = () => {
           clickable: true
         }}
         modules={[Pagination, Navigation]}
-        className='h-[500px]'
+        className='h-[500px] xl:h-[400px]'
         style={{ '--swiper-navigation-color': '#F13024', '--swiper-pagination-color': '#F13024' }}
       >
         {projects.map((slide, index) => {
@@ -91,7 +91,7 @@ const ProjectCard = () => {
                   {/* image, name */}
                   <div className='w-full max-w-[400px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-2'>
                     <div className='flex flex-col justify-center text-center'>
-                      <div className='relative h-[230px] w-[300px]'>
+                      <div className='relative xl:h-[230px] xl:w-[300px] h-[200px] w-[250px]'>
                         <img src={slide.image} alt={slide.name} className='w-full h-full object-cover rounded-2xl' />
                       </div>
 
@@ -121,6 +121,13 @@ const ProjectCard = () => {
 
                 <div className='flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-full relative xl:pl-20 xl:pr-5'>
                   <div className=" text-secondary text-[16px] text-center xl:text-left leading-[30px]">{slide.description}</div>
+                  <div className="mt-4 flex justify-center xl:justify-start flex-wrap gap-2">
+                    {slide.tags.map((tag) => (
+                      <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+                        #{tag.name}
+                      </p>
+                    ))}
+                  </div>
                 </div>
 
               </div>

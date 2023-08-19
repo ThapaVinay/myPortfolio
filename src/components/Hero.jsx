@@ -16,7 +16,7 @@ const Hero = () => {
         </div>
 
         <div>
-          <h1 className='font-black text-white lg:text-[60px] sm:text-[40px] xs:text-[30px] text-[30px] lg:leading-[78px] mt-2 flex gap-4' style={{ fontFamily: 'Sora, sans-serif' }}>Hi,<img className="w-20 h-20" src={hi} alt="hi" /> I'm <span className='text-[#F13024] font-bold'>Vinay</span></h1>
+          <h1 className='font-black text-white lg:text-[60px] sm:text-[30px] xs:text-[20px] text-[30px] lg:leading-[78px] mt-2 flex gap-4' style={{ fontFamily: 'Sora, sans-serif' }}>Hi,<img className="xl:w-20 xl:h-20 h-10 w-10" src={hi} alt="hi" /> I'm <span className='text-[#F13024] font-bold'>Vinay</span></h1>
           <p className='text-[#dfd9ff] font-medium lg:text-[20px] sm:text-[18px] xs:text-[16px] text-[16px] lg:leading-[40px] mt-2'> I am an AIML Enthusiast <br className='sm:block hidden' />and a full stack developer. </p>
         </div>
 
