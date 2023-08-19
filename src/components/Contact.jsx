@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import emailjs from "@emailjs/browser";
 import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
-import { slideIn } from '../utils/motion';
+import { fadeIn } from '../utils/motion';
+import { BsArrowRight } from "react-icons/bs";
 
 const Contact = () => {
   const formRef = useRef();
@@ -14,6 +15,7 @@ const Contact = () => {
   })
 
   const [loading, setLoading] = useState(false);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,12 +55,39 @@ const Contact = () => {
   }
 
   return (
-    <div className='h-full bg-primary/30'>
-      <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
-        <div className="flex flex-col w-full max-w-[700px]"></div>
-      </div>
-    </div>
 
+    <motion.div
+      variants={fadeIn('down', "", 0.1, 1)}
+    >
+      <div className='h-full bg-primary/30'>
+        <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+
+          {/* text and form */}
+          <div className="flex flex-col w-full max-w-[700px] ">
+
+            {/* text */}
+            <h2 className='h2 text-center mb-12'>
+              Let's <span className='text-accent'>connect</span>
+            </h2>
+
+            {/* form */}
+            <form onSubmit={handleSubmit}
+              className='flex-1 flex flex-col gap-6 w-full mx-auto'>
+              <div className="flex gap-x-6 w-full">
+                <input type="text" placeholder='name' name="name" className='input' value={form.name} onChange={handleChange} />
+                <input type="text" placeholder='email' name="email" className='input' value={form.email} onChange={handleChange}/>
+              </div>
+              <textarea placeholder='message' className='textarea' name="message" value={form.message} onChange={handleChange}/>
+              <button className='btn  rounded-full border border-white/50 max-w-[170px] px-4 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>
+                <span className='group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500'>Let's Talk</span>
+                <BsArrowRight className='-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]' />
+              </button >
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </motion.div>
 
 
 
