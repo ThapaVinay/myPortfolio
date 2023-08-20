@@ -7,6 +7,7 @@ import circles from "/circles.png";
 import TopLeftImage from "./TopLeftImage.jsx";
 import ServiceSlider from "./ServiceSlider.jsx";
 import  Tech  from "./Tech.jsx";
+import { useEffect } from 'react';
 
 // const ServiceCard = ({ index, title, icon }) => {
 //   return (
@@ -33,6 +34,11 @@ import  Tech  from "./Tech.jsx";
 // }
 
 const About = () => {
+
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[])
+
   return (
     <>
 

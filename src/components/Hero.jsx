@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { motion } from 'framer-motion'
 import { styles } from '../style'
 import { ComputersCanvas } from './canvas'
@@ -7,6 +7,11 @@ import '@fontsource/sora';
 import  TopLeftImage  from "./TopLeftImage.jsx";
 
 const Hero = () => {
+
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[])
+
   return (
     <>
       <TopLeftImage />

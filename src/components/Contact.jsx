@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import emailjs from "@emailjs/browser";
 import { EarthCanvas, StarsCanvas } from './canvas';
@@ -166,6 +166,10 @@ const ContactForm = () => {
 }
 
 const Contact = () => {
+  
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[])
 
   return (
     <div className="relative z-0">

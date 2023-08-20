@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import { motion } from 'framer-motion'
 import 'react-vertical-timeline-component/style.min.css'
@@ -12,7 +12,7 @@ const ExperienceCard = ({ experience }) => {
   return (
 
     <VerticalTimelineElement
-      contentStyle={{ background: '#1d1836', color: "#fff"}}
+      contentStyle={{ background: '#1d1836', color: "#fff" }}
       contentArrowStyle={{ borderRight: '7px solid #232631' }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
@@ -43,29 +43,34 @@ const ExperienceCard = ({ experience }) => {
 }
 
 const Experience = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <>
+      <div className='bg-primary'>
+        <div className='w-[200px] xl:w-[260px] absolute -left-52 -bottom-12 mix-blend-color-dodge rotate-12  duration-75 z-10'>
+          <img src={bulb} alt="bulb" width={260} height={200} className='w-full h-full' />
+        </div>
 
-      <div className='w-[200px] xl:w-[260px] absolute -left-52 -bottom-12 mix-blend-color-dodge rotate-12  duration-75 z-10'>
-        <img src={bulb} alt="bulb" width={260} height={200} className='w-full h-full' />
+        <motion.div
+          variants={textVariant()}
+        >
+          <p className='text-white font-bold md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'> Work Experience</p>
+        </motion.div>
+
+        <div className="mt-20 flex flex-col mb-10">
+          <VerticalTimeline>
+            {experiences.map((experience, index) => {
+              return <ExperienceCard key={index} experience={experience} />
+            })
+
+            }
+          </VerticalTimeline>
+        </div>
       </div>
-
-      <motion.div
-        variants={textVariant()}
-      >
-        <p className='text-white font-bold md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]'> Work Experience</p>
-      </motion.div>
-
-      <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
-          {experiences.map((experience, index) => {
-            return <ExperienceCard key={index} experience={experience} />
-          })
-
-          }
-        </VerticalTimeline>
-      </div>
-
     </>
   )
 }

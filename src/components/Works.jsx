@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import { github } from "../assets";
@@ -143,6 +143,11 @@ const ProjectCard = () => {
 }
 
 const Works = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <>
       <motion.div
