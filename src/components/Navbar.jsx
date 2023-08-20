@@ -15,8 +15,8 @@ import Socials from './Socials';
 export const navData = [
   { name: 'home', path: '/', icon: <HiHome /> },
   { name: 'about', path: '/about', icon: <HiUser /> },
-  { name: 'experience', path: '/work', icon: <HiAcademicCap /> },
-  { name: 'projects', path: '/services', icon: <HiFolder /> },
+  { name: 'experience', path: '/experience', icon: <HiAcademicCap /> },
+  { name: 'projects', path: '/works', icon: <HiFolder /> },
   {
     name: 'contact',
     path: '/contact',
@@ -76,7 +76,7 @@ const Navbar = () => {
           <div className='hidden xl:flex absolute top-[25vh] right-[3vh] justify-between xl:flex-col items-center xl:justify-center gap-y-10 bg-white/10 backdrop-blur-sm xl:text-xl xl:rounded-full p-4 py-6'>
             {navData.map((link, index) => {
               const isActive = activeItem === index;
-              return <a href={`#${link.name}`} key={index}
+              return <Link to={link.path} key={index}
                 onClick={() => handleItemClick(index)}
                 className={`group hover:text-[#F13024] transition-all duration-300 ${isActive ? '#F13024' : ''}`}
               >
@@ -91,19 +91,19 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                {link.icon}</a>
+                {link.icon}</Link>
             })}
           </div>
 
           <div className='xl:hidden fixed bottom-0 left-0 w-full flex justify-between items-center gap-x-6 text-xl bg-white/10 backdrop-blur-md p-4'>
             {navData.map((link, index) => {
               const isActive = activeItem === index;
-              return <a href={`#${link.name}`} key={index}
+              return <Link to={link.path} key={index}
                 onClick={() => handleItemClick(index)}
                 className={`group hover:text-[#F13024] transition-all duration-300 ${isActive ? '#F13024' : ''}`}
               >
 
-                {link.icon}</a>
+                {link.icon}</Link>
             })}
           </div>
 
