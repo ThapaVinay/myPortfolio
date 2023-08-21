@@ -7,7 +7,7 @@ const App = () => {
 
     <BrowserRouter>
 
-      <div className="relative z-0 bg-primary ">
+      <div className="relative z-0 bg-primary overflow-hidden">
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Hero />} />

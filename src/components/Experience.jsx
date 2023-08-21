@@ -50,7 +50,6 @@ const Experience = () => {
 
   return (
     <>
-      <div className='bg-primary'>
         <div className='w-[200px] xl:w-[260px] absolute -left-52 -bottom-12 mix-blend-color-dodge rotate-12  duration-75 z-10'>
           <img src={bulb} alt="bulb" width={260} height={200} className='w-full h-full' />
         </div>
@@ -70,7 +69,6 @@ const Experience = () => {
             }
           </VerticalTimeline>
         </div>
-      </div>
     </>
   )
 }
