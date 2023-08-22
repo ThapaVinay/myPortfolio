@@ -165,7 +165,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-20 xl:mt-0'>
+      <div className='mt-20 xl:mt-0 mb-10'>
 
         {/* {projects.map((project, index) => (
           <ProjectCard

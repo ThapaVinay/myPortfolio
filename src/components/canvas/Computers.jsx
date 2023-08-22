@@ -28,8 +28,8 @@ const Computers = ({isMobile}) => {
       {/* Render the 3D object loaded from glTF */}
       <primitive
         object={computer.scene}
-        scale={ isMobile ? 0.60 : 0.70}
-        position={ isMobile ? [0, -3, -2.2] :[0, -3.25, -1.5]}
+        scale={ isMobile ? 0.40 : 0.70}
+        position={ isMobile ? [-0, -2, -0.5] :[0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
 
@@ -44,7 +44,7 @@ const ComputersCanvas = () => {
   useEffect(() => {
 
     // it is used to check the device size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 800px)");
     
     // mediaQuery.matches returns a boolean
     setIsMobile(mediaQuery.matches);

@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import {
     RxCrop,
@@ -15,24 +16,24 @@ import {
 
 const services = [
     {
-      title: "Web Developer",
-      icon: <RxCrop />,
+        title: "Web Developer",
+        icon: <RxCrop />,
     },
     {
-      title: "React Native Developer",
-      icon: <RxDesktop />,
+        title: "React Native Developer",
+        icon: <RxDesktop />,
     },
     {
-      title: "Backend Developer",
-      icon: <RxPencil2 />,
+        title: "Backend Developer",
+        icon: <RxPencil2 />,
     },
     {
-      title: "AIML Enthusiast",
-      icon: <RxRocket />,
+        title: "AIML Enthusiast",
+        icon: <RxRocket />,
     },
-  ];
+];
 
-import { FreeMode, Pagination } from 'swiper/modules';
+import { FreeMode, Navigation, Pagination } from 'swiper/modules';
 const ServiceSlider = () => {
     return (
         <Swiper breakpoints={{
@@ -54,15 +55,16 @@ const ServiceSlider = () => {
             pagination={{
                 clickable: true,
             }}
-            modules={[FreeMode, Pagination]}
-            className='h-[240px] sm:h-[340px]'
-            style={{ '--swiper-pagination-color': '#F13024' }} // Set custom color
+
+            modules={[FreeMode, Navigation, Pagination]}
+            className='h-[240px] sm:h-[340px] px-10'
+            style={{ '--swiper-pagination-color': '#F13024', '--swiper-navigation-color': '#F13024' }} // Set custom color
 
         >
             {
                 services.map((item, index) => {
                     return (
-                        <SwiperSlide key={index} className='w-full'>
+                        <SwiperSlide key={index} className='w-full mt-10 px-2 sm:px-0'>
                             <div className='bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex xl:flex-col  justify-between items-center gap-x-6 gap-y-6  group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300'>
                                 <div className=' text-5xl text-accent flex justify-start xl:mb-2'>
                                     {item.icon}

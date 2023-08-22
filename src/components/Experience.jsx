@@ -14,18 +14,18 @@ const ExperienceCard = ({ experience }) => {
     <VerticalTimelineElement
       contentStyle={{ background: '#1d1836', color: "#fff" }}
       contentArrowStyle={{ borderRight: '7px solid #232631' }}
-      date={experience.date}
+      date={<span className='text-accent'>{experience.date}</span>}
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
           <img src={experience.icon} alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain' />
+            className='w-[60%] h-[60%] object-contai' />
         </div>
       }
     >
       <div>
         <h3 className='text-white text-[24px]'>{experience.title}</h3>
-        <p className='text-secondary text-[16px] font-semibold' style={{ margin: 0 }}>{experience.company_name}</p>
+        <p className='green-text-gradient text-[16px] font-semibold' style={{ margin: 0 }}>{experience.company_name}</p>
       </div>
 
       <ul className='mt-5 list-disc ml-5 space-y-2'>
@@ -68,7 +68,7 @@ const Experience = () => {
 
             }
           </VerticalTimeline>
-        </div>
+        </div>  
     </>
   )
 }
