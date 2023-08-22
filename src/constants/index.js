@@ -16,12 +16,12 @@ import {
   docker,
   meta,
   ngo,
-  tesla,
   shopify,
   notebook,
-  jobit,
+  face,
   tripguide,
   threejs,
+  codeclause,
 } from "../assets";
 
 
@@ -112,58 +112,19 @@ const experiences = [
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "Web Development Internship",
+    company_name: "CodeClause",
+    icon: codeclause,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "June 2023 - July 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed a dynamic web application using React that allows users to upload images and seamlessly remove the background using an external API.",
+      "Designed and implemented a comprehensive attendance system leveraging Flask, Python, and Firebase for a seamless face detection and tracking experience.",
+      "Utilized Git for version control, maintaining a clean and organized codebase through effective branching and merging strategies.",
+      "Demonstrated a strong commitment to continuous learning by quickly acquiring skills in new technologies and frameworks as required by project needs.",
     ],
   },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
 ];
 
 const projects = [
@@ -189,47 +150,47 @@ const projects = [
     source_code_link: "https://github.com/ThapaVinay/myNoteBook.git",
   },
   {
-    name: "Job IT",
+    name: "Face Attendance System",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "The Face Detection Attendance System is a powerful Flask application that utilizes face detection technology to automate attendance management. ",
     tags: [
       {
-        name: "react",
+        name: "flask",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "python",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "machine learning",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: face,
+    source_code_link: "https://github.com/ThapaVinay/CodeClause_Face_Detection_Attendance_System",
   },
   {
-    name: "Trip Guide",
+    name: "FlaskGPT",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "It is a ChatGPT clone web application built using Flask and Tailwind CSS. The application allows users to interact with a language model based on OpenAI's GPT architecture to generate responses to text input.",
     tags: [
       {
-        name: "nextjs",
+        name: "flask",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "tailwindcss",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "openai",
         color: "pink-text-gradient",
       },
     ],
     image: tripguide,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/ThapaVinay/FlaskGPT",
   },
 ];
 
-export {  technologies, experiences, testimonials, projects };
+export {  technologies, experiences, projects };

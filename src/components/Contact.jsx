@@ -75,11 +75,11 @@ const ContactForm = () => {
             <form onSubmit={handleSubmit}
               className='flex-1 flex flex-col gap-6 w-full mx-auto'>
               <div className="flex gap-x-6 w-full">
-                <input type="text" placeholder='name' name="name" className='input' value={form.name} onChange={handleChange} />
-                <input type="text" placeholder='email' name="email" className='input' value={form.email} onChange={handleChange} />
+                <input type="text" placeholder='name' name="name" className='input border-2 focus:ring-0 focus:border-accent' value={form.name} onChange={handleChange} />
+                <input type="text" placeholder='email' name="email" className='input border-2 focus:ring-0 focus:border-accent' value={form.email} onChange={handleChange} />
               </div>
-              <textarea placeholder='message' className='textarea' name="message" value={form.message} onChange={handleChange} />
-              <button className='btn  rounded-full border border-white/50 max-w-[170px] px-4 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>
+              <textarea placeholder='message' className='textarea border-2 focus:ring-0 focus:border-accent' name="message" value={form.message} onChange={handleChange} />
+              <button className='btn  rounded-full border border-white/50 max-w-[140px] px-4 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>
                 <span className='group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500'>Let's Talk</span>
                 <BsArrowRight className='-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]' />
               </button >
